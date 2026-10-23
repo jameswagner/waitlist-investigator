@@ -10,3 +10,11 @@ node_modules/
 dist/
 build/
 .DS_Store
+
+backend/data/
+*.db
+.env
+.pytest_cache/
+.ruff_cache/
+*.tsbuildinfo
+!.env.example
