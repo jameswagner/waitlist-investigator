@@ -24,7 +24,7 @@ cp .env.example .env          # set MODEL and the matching provider key
 (cd web && npm install && npm run dev)                    # terminal 2
 ```
 
-Open http://localhost:5173 and use the suggested question. Provider keys stay
+Open the URL Vite prints (usually http://localhost:5173) and use the suggested question. Provider keys stay
 server-side in `.env` (git-ignored). `npm run dev` disables CopilotKit telemetry.
 
 ## Tools (the agent's only data access)

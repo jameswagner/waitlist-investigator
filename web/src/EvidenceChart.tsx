@@ -1,4 +1,4 @@
-import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
+import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import type { EngagementResult } from "./evidence";
 
 export const pct = (v: number) => `${(v * 100).toFixed(1)}%`;
@@ -17,7 +17,8 @@ export function EvidenceChart({ result }: { result: EngagementResult }) {
         Offers sent {scope.start_date} to {scope.end_date} (UTC, inclusive)
       </p>
       <div role="img" aria-label={`Acceptance and opt-out rates by offer number for ${scope.practice_name}`}>
-        <LineChart width={640} height={300} data={data} margin={{ top: 8, right: 16, bottom: 20, left: 0 }}>
+        <ResponsiveContainer width="100%" height={320}>
+        <LineChart data={data} margin={{ top: 8, right: 16, bottom: 20, left: 0 }}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="offer" label={{ value: "Offer number", position: "insideBottom", offset: -12 }} />
           <YAxis unit="%" domain={[0, 100]} />
@@ -26,6 +27,7 @@ export function EvidenceChart({ result }: { result: EngagementResult }) {
           <Line dataKey="Acceptance" stroke="#1b6ec2" strokeWidth={2} isAnimationActive={false} />
           <Line dataKey="Opt-out (24h)" stroke="#c2410c" strokeWidth={2} strokeDasharray="6 3" isAnimationActive={false} />
         </LineChart>
+        </ResponsiveContainer>
       </div>
       <table>
         <caption className="sr-only">Counts and rates by offer number</caption>
