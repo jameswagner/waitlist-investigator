@@ -1,0 +1,19 @@
+:root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+body { margin: 0; }
+main { padding: 12px 20px; }
+h1 { font-size: 1.3rem; margin: 0; }
+.muted { color: #6b7280; margin: 4px 0; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 20px; height: calc(100vh - 90px); }
+.workspace { display: flex; flex-direction: column; gap: 12px; overflow: auto; }
+.evidence { min-height: 200px; }
+.history ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.history h3 { font-size: .9rem; margin: 0 0 6px; }
+.history button { font-size: .8rem; padding: 4px 8px; cursor: pointer; }
+.history button[aria-pressed="true"] { outline: 2px solid #1b6ec2; }
+table { border-collapse: collapse; margin-top: 8px; font-size: .85rem; }
+th, td { border: 1px solid #d1d5db; padding: 3px 8px; text-align: right; }
+.error { color: #b91c1c; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.chat { display: flex; flex-direction: column; min-height: 0; border-left: 1px solid #d1d5db; padding-left: 12px; }
+.chat > :last-child { flex: 1; min-height: 0; }
+.toolnote { font-size: .8rem; color: #6b7280; }
